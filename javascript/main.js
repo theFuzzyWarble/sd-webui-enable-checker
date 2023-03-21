@@ -1,9 +1,13 @@
-let color_enable = "skyblue";
-let color_disable = "#aeaeae"; // light grey
+let color_enable = "#333333";
+let color_disable = "#666666";
+let bgColor_enable = "skyblue";
+let bgColor_disable = "#aeaeae"; // light grey
 if (window.location.href.indexOf("?__theme=dark") > 0) {
   // for dark mode
-  color_enable = "#237366";
-  color_disable = "#5a5757";
+  bgColor_enable = "#237366";
+  bgColor_disable = "#5a5757";
+  color_enable = "#333333";
+  color_disable = "#666666";
 }
 
 function get_script_area() {
@@ -43,9 +47,11 @@ function get_sibling_checkbox_status(node) {
 
 function change_bg(header, is_active) {
   if (is_active) {
-    header.style.backgroundColor = color_enable;
+    header.style.backgroundColor = bgColor_enable;
+    header.style.color = color_enable;
   } else {
     header.style.backgroundColor = color_disable;
+    header.style.color = bgColor_disable;
   }
 }
 
